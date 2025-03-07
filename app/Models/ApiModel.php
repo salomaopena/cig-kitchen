@@ -76,4 +76,8 @@ class ApiModel extends Model
     public function get_restaturants(){
         return $this->_api('restaurant');
     }
+
+    public function get_pending_orders(){
+        return $this->_api('get_pending_orders');
+    }
 }

@@ -14,7 +14,12 @@ class Main extends BaseController
         //reset any previous order and set a new one
        $this->_init_system();
 
-       return view('teste');
+       $model = new ApiModel();
+       $results = $model->get_pending_orders();
+       
+       echo('<pre>');
+       print_r($results);
+        
     }
 
     private function _init_system()
