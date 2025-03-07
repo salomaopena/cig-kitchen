@@ -14,12 +14,7 @@ class Main extends BaseController
         //reset any previous order and set a new one
        $this->_init_system();
 
-       dd(
-        [
-            session()->get('restaurant_details'),
-            session()->get('products_categories'),
-            session()->get('products'),
-        ]);
+       return view('teste');
     }
 
     private function _init_system()
