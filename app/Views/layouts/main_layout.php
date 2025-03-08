@@ -24,6 +24,9 @@
 
 <body class="main-wrapper">
 
+    <!-- top bar -->
+     <?= $this->include('top_bar'); ?>
+
 
     <!--Content -->
     <?= $this->renderSection('content') ?>

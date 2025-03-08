@@ -17,11 +17,11 @@ class Main extends BaseController
         }
 
         $orders =  $this->_get_pending_orders();
-
+    
         //loadr view
         $data = [
-            //'orders' => $orders,
-            //'restaurants_details' => session()->get('restaurants_details'),
+            'orders' => $orders,
+            'restaurants_details' => session()->get('restaurants_details'),
         ];
         return view('main', $data);
     }
@@ -108,7 +108,7 @@ class Main extends BaseController
 
         if (!$this->_check_data($data)) {
             
-            $this->init_error('System error: please contact the support');
+            $this->init_error('System error on get restaurants: please contact the support');
         }
 
         //set initial data in session
@@ -161,6 +161,7 @@ class Main extends BaseController
     {
         $model = new ApiModel();
         $results = $model->get_pending_orders();
+
 
         if ($results['status'] != 200) {
             $this->init_error($results['message']);
