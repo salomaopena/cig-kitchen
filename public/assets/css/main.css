@@ -1,0 +1,32 @@
+/*CSS*/
+*{
+    font-family: "Rajdhani", sans-serif;
+}
+
+.main-wrapper{
+    background-image: url('../images/cig_background.jpg');
+    background-repeat: repeat;
+    width: 100%;
+    color: #FFFFFF;
+}
+
+.top-bar-bg{
+    background:linear-gradient(to bottom, rgb(80,20,0),rgb(130,30,0));
+}
+
+.top-bar-watch{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 36px;
+    font-weight: bold;
+    background-color: rgb(37, 25, 25);
+    color: rgb(74,253, 83);
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+.order-wrapper{
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 5px;
+}
