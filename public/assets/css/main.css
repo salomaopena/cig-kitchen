@@ -23,3 +23,10 @@
     border-radius: 20px;
     padding: 10px 20px;
 }
+
+.order-wrapper{
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 5px;
+}

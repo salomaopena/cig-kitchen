@@ -4,6 +4,7 @@
             <img src="<?= base_url('assets/images/logo.png') ?>" alt="Logo" width="60" class="img-fluid">
         </div>
         <div class="col d-flex justify-content-end align-items-center">
+            <strong class="me-5 display-6"><?= session()->get('restaurant_details')['name']?></strong>
             <div class="top-bar-watch me-3" id="top-watch">
                 00 : 00 : 00
             </div>

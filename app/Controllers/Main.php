@@ -17,6 +17,10 @@ class Main extends BaseController
         }
 
         $orders =  $this->_get_pending_orders();
+
+        // TEMP - reduce array to x elements (5)
+
+        $orders = array_slice($orders, 0, 6);
     
         //loadr view
         $data = [
