@@ -1,0 +1,12 @@
+/*CSS*/
+*{
+    font-family: "Rajdhani", sans-serif;
+}
+
+.main-wrapper{
+    background-image: url('../images/cig_background.jpg');
+    background-repeat: repeat;
+    height: 100vh;
+    width: 100%;
+    color: #FFFFFF;
+}
