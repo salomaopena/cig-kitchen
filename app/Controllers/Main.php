@@ -11,15 +11,19 @@ class Main extends BaseController
 
     public function index()
     {
-        //reset any previous order and set a new one
-       $this->_init_system();
+        //initialise system, if not initialized
+        if (!session()->get('restaurant_details')) {
+            $this->_init_system();
+        }
 
-       $model = new ApiModel();
-       $results = $model->get_pending_orders();
-       
-       echo('<pre>');
-       print_r($results);
-        
+        $orders =  $this->_get_pending_orders();
+
+        //loadr view
+        $data = [
+            //'orders' => $orders,
+            //'restaurants_details' => session()->get('restaurants_details'),
+        ];
+        return view('main', $data);
     }
 
     private function _init_system()
@@ -97,8 +101,13 @@ class Main extends BaseController
 
         $data = $api->get_restaturants();
 
+        //check if data is valid
+        if($data['status'] != 200){
+            $this->init_error($data['message']);
+        }
+
         if (!$this->_check_data($data)) {
-            //dd($data);
+            
             $this->init_error('System error: please contact the support');
         }
 
@@ -119,7 +128,7 @@ class Main extends BaseController
             !key_exists("status", $data) ||
             !key_exists("message", $data) ||
             $data["status"] != 200 ||
-            $data["message"] != "Success"
+            $data["message"] != "success"
         ) {
             return false;
         }
@@ -133,12 +142,12 @@ class Main extends BaseController
         }
 
         if (empty($message)) {
-            echo ('System error. Please contact the support.');
+            echo ('System error. Please contact the support init error.');
             exit();
         }
 
-        echo('ERROR: '. $message);
-        die();
+        echo view('init_error', ['error_message' => $message]);
+        exit();
     }
 
 
@@ -148,4 +157,14 @@ class Main extends BaseController
         $this->init_error('Application configuration has been reseted...');
     }
 
+    private function _get_pending_orders()
+    {
+        $model = new ApiModel();
+        $results = $model->get_pending_orders();
+
+        if ($results['status'] != 200) {
+            $this->init_error($results['message']);
+        }
+        return $results['data'];
+    }
 }
