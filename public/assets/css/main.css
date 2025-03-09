@@ -25,8 +25,39 @@
 }
 
 .order-wrapper{
-    border: 1px solid #FFFFFF;
-    border-radius: 10px;
-    padding: 20px;
     margin: 10px 5px;
+    outline: 1px solid gray;
+}
+
+.order-top-bar{
+    background-color: rgb(255, 255, 255, 0.2);
+    height: 10px;
+}
+
+.order-content{
+    font-family: 'Courier New', Courier, monospace;
+    padding: 5px;
+}
+
+.order-content-item{
+    background-color: rgb(255, 255, 255, 0.2);
+    height: 70px;
+}
+
+.order-content-number{
+    font-size: 48px;
+    font-weight: bold;
+    width: 120px;
+}
+
+.order-content-total-items{
+    font-size: 24px;
+    font-weight: bold;
+    width: 250px;
+}
+
+.order-content-date-time{
+    font-size: 18px;
+    font-weight: bold;
+    width: 250px;
 }

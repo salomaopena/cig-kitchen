@@ -20,12 +20,11 @@ class Main extends BaseController
 
         // TEMP - reduce array to x elements (5)
 
-        $orders = array_slice($orders, 0, 6);
+        //$orders = array_slice($orders, 0, 6);
     
         //loadr view
         $data = [
             'orders' => $orders,
-            'restaurants_details' => session()->get('restaurants_details'),
         ];
         return view('main', $data);
     }

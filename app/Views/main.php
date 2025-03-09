@@ -17,10 +17,12 @@
                 </a>
             </div>
         <?php else: ?>
-            <div class="row">
-                <?php foreach ($orders as $order): ?>
-                    <?= view('order_card',['order'=>$order])?>
-                <?php endforeach; ?>
+            <div class="col-12">
+                <div class="row">
+                    <?php foreach ($orders as $order): ?>
+                        <?= view('order_card', ['order' => $order]) ?>
+                    <?php endforeach; ?>
+                </div>
             </div>
         <?php endif; ?>
 
