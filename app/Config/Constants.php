@@ -90,3 +90,18 @@ define('APP_VERSION',   '1.0.0');
 
 
 define('ENCRYPTION_KEY', '!FXcuT9swzrx4n<]/+GIz#KLkGyw_9fb#4@"+o;hPHQwaX1$1OwQlsYAu28X+DT(');
+
+
+define('ORDER_COLORS',  [
+    '#331144',
+    '#2B2766',
+    '#550022',
+    '#005588',
+    '#003333',
+    '#002555',
+    '#5A1100',
+    '#442211',
+    '#332200',
+    '#115511',
+    '#554411',
+]);

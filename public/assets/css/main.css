@@ -30,8 +30,9 @@
 }
 
 .order-top-bar{
-    background-color: rgb(255, 255, 255, 0.2);
-    height: 10px;
+    background-color: rgb(0, 0, 0, 0.2);
+    margin-bottom: 5px;
+    height: 20px;
 }
 
 .order-content{
@@ -40,8 +41,10 @@
 }
 
 .order-content-item{
-    background-color: rgb(255, 255, 255, 0.2);
+    background-color: rgb(255, 255, 255, 0.1);
+    border-radius: 10px;
     height: 70px;
+    margin-bottom: 5px;
 }
 
 .order-content-number{
