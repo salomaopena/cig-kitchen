@@ -24,7 +24,7 @@
             </div>
 
             <!--delete order-->
-            <a href="<#>" class="ms-2 btn btn-danger p-3 px-4">
+            <a href="<?= site_url('/delete_order/'. Encrypt($order['id']))?>" class="ms-2 btn btn-danger p-3 px-4">
                 <i class="fa-solid fa-trash-alt fa-2x"></i>
             </a>
 

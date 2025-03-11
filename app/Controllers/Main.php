@@ -21,7 +21,7 @@ class Main extends BaseController
         // TEMP - reduce array to x elements (5)
 
         //$orders = array_slice($orders, 0, 6);
-    
+
         //loadr view
         $data = [
             'orders' => $orders,
@@ -105,12 +105,12 @@ class Main extends BaseController
         $data = $api->get_restaturants();
 
         //check if data is valid
-        if($data['status'] != 200){
+        if ($data['status'] != 200) {
             $this->init_error($data['message']);
         }
 
         if (!$this->_check_data($data)) {
-            
+
             $this->init_error('System error on get restaurants: please contact the support');
         }
 
@@ -170,5 +170,26 @@ class Main extends BaseController
             $this->init_error($results['message']);
         }
         return $results['data'];
+    }
+
+    public function delete_order($enc_order_id)
+    {
+
+        $dec_order_id = Decrypt($enc_order_id);
+
+        if (empty($dec_order_id)) {
+            return redirect()->to(site_url('/'));
+        }
+
+        $model = new ApiModel();
+        $results = $model->get_order_details($dec_order_id);
+
+        if ($results['status'] != 200) {
+            return redirect()->to(site_url('/'));
+        }
+
+        //display confirmation page
+        return view('delete_order',['order'=>$results['data'][0]]);
+
     }
 }
