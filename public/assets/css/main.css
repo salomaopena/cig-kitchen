@@ -1,0 +1,66 @@
+/*CSS*/
+*{
+    font-family: "Rajdhani", sans-serif;
+}
+
+.main-wrapper{
+    background-image: url('../images/cig_background.jpg');
+    background-repeat: repeat;
+    width: 100%;
+    color: #FFFFFF;
+}
+
+.top-bar-bg{
+    background:linear-gradient(to bottom, rgb(80,20,0),rgb(130,30,0));
+}
+
+.top-bar-watch{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 36px;
+    font-weight: bold;
+    background-color: rgb(37, 25, 25);
+    color: rgb(74,253, 83);
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+.order-wrapper{
+    margin: 10px 5px;
+    outline: 1px solid gray;
+}
+
+.order-top-bar{
+    background-color: rgb(0, 0, 0, 0.2);
+    margin-bottom: 5px;
+    height: 20px;
+}
+
+.order-content{
+    font-family: 'Courier New', Courier, monospace;
+    padding: 5px;
+}
+
+.order-content-item{
+    background-color: rgb(255, 255, 255, 0.1);
+    border-radius: 10px;
+    height: 70px;
+    margin-bottom: 5px;
+}
+
+.order-content-number{
+    font-size: 48px;
+    font-weight: bold;
+    width: 120px;
+}
+
+.order-content-total-items{
+    font-size: 24px;
+    font-weight: bold;
+    width: 250px;
+}
+
+.order-content-date-time{
+    font-size: 18px;
+    font-weight: bold;
+    width: 250px;
+}
