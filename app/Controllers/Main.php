@@ -182,14 +182,29 @@ class Main extends BaseController
         }
 
         $model = new ApiModel();
-        $results = $model->get_order_details($dec_order_id);
+        $order = $model->get_order_details($dec_order_id);
 
-        if ($results['status'] != 200) {
+        if ($order['status'] != 200) {
             return redirect()->to(site_url('/'));
         }
 
         //display confirmation page
-        return view('delete_order',['order'=>$results['data'][0]]);
+        return view('delete_order',['order'=>$order['data'][0]]);
 
+    }
+
+    public function delete_order_confirm($enc_order_id)
+    {
+        $dec_order_id = Decrypt($enc_order_id);
+
+        if (empty($dec_order_id)) {
+            return redirect()->to(site_url('/'));
+        }
+
+        $model = new ApiModel();
+        $model->delete_order($dec_order_id);
+        
+       
+        return redirect()->to(site_url('/'));
     }
 }

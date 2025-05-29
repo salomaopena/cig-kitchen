@@ -80,4 +80,12 @@ class ApiModel extends Model
     public function get_pending_orders(){
         return $this->_api('get_pending_orders');
     }
+
+    public function get_order_details($order_id){
+        return $this->_api('get_order_details', 'POST', ['id' => $order_id]);
+    }
+
+    public function delete_order($order_id){
+        return $this->_api('delete_order', 'POST', ['id' => $order_id]);
+    }
 }

@@ -1,5 +1,5 @@
 <div class="col-6">
-    <div class="order-wrapper" style="background-color: <?=order_color($order['order_number'])?>;">
+    <div class="order-wrapper" style="background-color: <?= order_color($order['order_number']) ?>;">
 
         <div class="order-top-bar"></div>
 
@@ -17,6 +17,11 @@
                 <?= lead_zeros(define_order_number_from_from_last_order_number($order['total_items']), 3) ?> itens
             </div>
 
+            <!-- order total price-->
+            <div class="ms-2 order-content-item order-content-total-items d-flex justify-content-center align-items-center p-2 text-warning">
+                <?= format_currency($order['total_price'])?>
+            </div>
+
             <!--order date time-->
 
             <div class="ms-2 order-content-item  order-content-date-time  d-flex justify-content-center align-items-center p-2">
@@ -24,7 +29,7 @@
             </div>
 
             <!--delete order-->
-            <a href="<?= site_url('/delete_order/'. Encrypt($order['id']))?>" class="ms-2 btn btn-danger p-3 px-4">
+            <a href="<?= site_url('/delete_order/' . Encrypt($order['id'])) ?>" class="ms-2 btn btn-danger p-3 px-4">
                 <i class="fa-solid fa-trash-alt fa-2x"></i>
             </a>
 
